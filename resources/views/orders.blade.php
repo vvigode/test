@@ -64,7 +64,6 @@
                                 <th>Адрес</th>
                                 <th>Дата</th>
                                 <th>&nbsp;</th>
-                                <th>&nbsp;</th>
                             </thead>
                             <tbody>
                                 @foreach ($orders as $order)
@@ -84,14 +83,6 @@
                                             </td>
                                             <input type="hidden" name="id" class="form-control" value="{{ $order->id }}">
                                         </form>
-                                        <td>
-                                            <form action="{{ url('order/delete/'.$order->id) }}" method="POST">
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger">
-                                                    <i class="fa fa-btn fa-trash"></i>Удалить
-                                                </button>
-                                            </form>
-                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
